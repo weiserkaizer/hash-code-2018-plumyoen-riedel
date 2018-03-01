@@ -9,13 +9,13 @@
 class Vehicle{
 private:
 	Intersection currentInter;
-	vector<Ride> rides;
+	std::vector<Ride> rides;
 	int nbRides;
 public:
 	Vehicle();
 	Intersection getCurrentInter();
 	void addRide(Ride r);
 	void printRides();
-}
+};
 
 #endif

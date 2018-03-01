@@ -1,32 +1,32 @@
-#include "map.h"
-#include "stringFunctions.h"
+#include "Map.h"
+using namespace std;
 
-Map::Map(string path){
+Map::Map(char* path){
 	ifstream in(path);
-	string line
+	string line;
 
 	getline(in,line);
 
-	rows=line.firstIntLine(line);
+	rows=firstIntLine(line);
 	cutLine(line);
-	columns=line.firstIntLine(line);
+	columns=firstIntLine(line);
 	cutLine(line);
-	nbVehicles=line.firstIntLine(line);
+	nbVehicles=firstIntLine(line);
 	cutLine(line);
-	nbRides=line.firstIntLine(line);
+	nbRides=firstIntLine(line);
 	cutLine(line);
-	int bonus=line.firstIntLine(line);
+	int bonus=firstIntLine(line);
 	cutLine(line);
-	int steps=line.firstIntLine(line);
+	int steps=firstIntLine(line);
 
 
 	for(int i = 0; i<nbVehicles; ++i){
-		vehicles.pushback(Vehicle());
+		vehicles.push_back(Vehicle());
 	}
 
 	for(int i = 0; i<nbRides; ++i){
-		getline(in,line)
-		rides.pushback(readRide(line))
+		getline(in,line);
+		rides.push_back(readRide(line));
 	}
 }
 
@@ -40,17 +40,17 @@ void Map::assignRide(int r,int v){
 
 Ride Map::readRide(string s){
 	int sx = firstIntLine(s);
-	cutline(s);
+	cutLine(s);
 	int sy = firstIntLine(s);
-	cutline(s);
+	cutLine(s);
 	Intersection st(sx,sy);
 	int fx = firstIntLine(s);
-	cutline(s);
+	cutLine(s);
 	int fy = firstIntLine(s);
-	cutline(s);
+	cutLine(s);
 	Intersection fn(fx,fy);
 	int sd = firstIntLine(s);
-	cutline(s);
+	cutLine(s);
 	int fd = firstIntLine(s);
 	
 	return Ride(st,fn,sd,fd);

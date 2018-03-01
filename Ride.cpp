@@ -1,5 +1,7 @@
 #include "Ride.h"
 
+int Ride::nextId = 1;
+
 Ride::Ride(Intersection s,Intersection f,int sd,int fd){
 	id = nextId;
 	nextId++;
@@ -7,7 +9,7 @@ Ride::Ride(Intersection s,Intersection f,int sd,int fd){
 	finish = f;
 	startDate = sd;
 	finishDate = fd;
-	length = abs(start.x-finish.x)+abs(start.y-finish.y);
+	length = std::abs(start.x-finish.x)+std::abs(start.y-finish.y);
 }
 
 Intersection Ride::getStart(){
@@ -19,7 +21,7 @@ Intersection Ride::getFinish(){
 }
 
 int Ride::getStartDate(){
-	return startDate();
+	return startDate;
 }
 
 int Ride::getFinishDate(){

@@ -8,20 +8,21 @@
 #include "Vehicle.h"
 #include "Ride.h"
 #include "Intersection.h"
+#include "stringFunctions.h"
 
 class Map{
 private:
 	int rows;
 	int columns;
 	int nbVehicles;
-	vector<vehicle> vehicles; 
+	std::vector<Vehicle> vehicles; 
 	int nbRides;
-	vector<Ride> rides;
+	std::vector<Ride> rides;
 public:
-	Map(int r,int c,vector<Vehicle> v,vector<Ride> rd);
+	Map(char* path);
 	void assignRides();
 	void assignRide(int r,int v);
-	Ride readRide(string s);
-}
+	Ride readRide(std::string s);
+};
 
 #endif

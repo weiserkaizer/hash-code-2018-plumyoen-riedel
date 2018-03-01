@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-int firstIntLine(string);
-string cutline(string);
+int firstIntLine(std::string);
+std::string cutLine(std::string);
 
 #endif
