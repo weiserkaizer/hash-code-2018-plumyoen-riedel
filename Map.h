@@ -14,10 +14,13 @@ private:
 	vector<vehicle> vehicles; 
 	int nbRides;
 	vector<Ride> rides;
+
+	int currentRide;
 public:
 	Map(int r,int c,vector<Vehicle> v,vector<Ride> rd);
 	void assignRides();
-	void assignRide(Ride,Vehicule);
+	void assignRide(int r,int v);
+	Ride readRide(int n);
 }
 
 #endif
