@@ -2,10 +2,12 @@
 #define VEHICLE_H
 
 #include <iostream>
+#include "Intersection.h"
 
 class Vehicle{
 private:
-	
+	Intersection currentInter;
+	Intersection nextInter;
 public:
 
 }
