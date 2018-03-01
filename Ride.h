@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Intersection.h"
+#include <cmath>
 
 class Ride{
 private:
